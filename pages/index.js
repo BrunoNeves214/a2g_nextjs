@@ -20,7 +20,7 @@ export default function Home({results}) {
 
 
 export async function getStaticProps(){
-  const res = await fetch(`https://api.rawg.io/api/games?key=${API_KEY}&page_size=2`)
+  const res = await fetch(`https://api.rawg.io/api/games?key=${API_KEY}&page_size=20`)
   const data = await res.json()
   const results = data.results
 
