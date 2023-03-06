@@ -45,7 +45,7 @@ export default function GamePage({data, results}) {
 }
 
 export async function getStaticPaths(){
-  const res = await fetch(`https://api.rawg.io/api/games?key=${API_KEY}&page_size=50`)
+  const res = await fetch(`https://api.rawg.io/api/games?key=${API_KEY}&page_size=2`)
 
   const data = await res.json()
 
@@ -72,7 +72,6 @@ export async function getStaticProps({params}){
   const data = await res.json()
   const photos = await res2.json()
   const results = photos.results
-  console.log(results)
 
   return {
     props: {data, results}
