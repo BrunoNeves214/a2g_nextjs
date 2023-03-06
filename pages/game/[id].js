@@ -36,7 +36,7 @@ export default function GamePage({data, results}) {
       {/* screenshots */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           {results.map(result => (
-            <Image key={result.id} width={500} height={500} src={`${result.image}`} alt={`${data.name_original}`}
+            <Image key={result.id} width={500} height={500} src={`${result.image}`} alt=''
             className='w-full'/>
           ))}
         </div>
@@ -72,6 +72,7 @@ export async function getStaticProps({params}){
   const data = await res.json()
   const photos = await res2.json()
   const results = photos.results
+  console.log(results)
 
   return {
     props: {data, results}
