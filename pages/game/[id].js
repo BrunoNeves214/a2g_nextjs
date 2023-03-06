@@ -72,7 +72,6 @@ export async function getStaticProps({params}){
   const data = await res.json()
   const photos = await res2.json()
   const results = photos.results
-  console.log(results.map(result => result.image))
 
   return {
     props: {data, results}
